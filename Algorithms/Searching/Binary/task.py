@@ -11,5 +11,6 @@ def binarySearch(arr: list, item: int) -> int:
             R = m - 1
     return None
 
-result = binarySearch([1,3,4,6,7,8,10,12,23,45,56,78,99], 23)
+
+result = binarySearch([1, 3, 4, 6, 7, 8, 10, 12, 23, 45, 56, 78, 99], 23)
 print(result)
