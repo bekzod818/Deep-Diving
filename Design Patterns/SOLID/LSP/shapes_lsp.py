@@ -86,3 +86,5 @@ def get_total_area(shapes: list):
 
 shapes = [Rectangle(width=2, height=4), Square(side=5)]
 print(get_total_area(shapes))
+
+"""Here, you pass a pair consisting of a rectangle and a square into a function that calculates their total area. Because the function only cares about the .calculate_area() method, it doesn’t matter that the shapes are different. This is the essence of the Liskov substitution principle."""
