@@ -1,9 +1,11 @@
 from math import isqrt
 
+
 def printnum(func):
     def wrapper(nums):
         prime = func(nums)
         return " ".join(str(i) for i in prime)
+
     return wrapper
 
 
@@ -17,7 +19,7 @@ def primes_less_than(n):
 
     for i in range(2, isqrt(n) + 1):
         if is_prime[i]:
-            for x in range(i*i, n, i):
+            for x in range(i * i, n, i):
                 is_prime[x] = False
 
     return [i for i in range(n) if is_prime[i]]

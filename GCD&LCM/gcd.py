@@ -6,13 +6,16 @@ def gcd(a, b):
     else:
         return a
 
+
 print(gcd(68, 119))
 
+
 # Euclid's Algorithm
-def computeGcd(a, b):
+def compute_gcd(a, b):
     if b == 0:
         return a
     else:
-        return computeGcd(b, a%b)
+        return compute_gcd(b, a % b)
 
-print(computeGcd(68, 119))
+
+print(compute_gcd(68, 119))
