@@ -47,3 +47,6 @@ You’ve learned a lot about the five **SOLID principles**, including how to ide
 * Use the SOLID principles to help you **refactor** Python code and improve its OOD
 
 With this knowledge, you have a strong foundation of well-established best practices that you should apply when designing your classes and their relationships in Python. By applying these principles, you can create code that’s more maintainable, extensible, scalable, and testable.
+
+
+Full article here: [SOLID Principles: Improve Object-Oriented Design in Python](https://realpython.com/solid-principles-python/).
