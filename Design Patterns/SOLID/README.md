@@ -21,3 +21,11 @@ The Liskov substitution principle (LSP) was introduced by Barbara Liskov at an O
 > Subtypes must be substitutable for their base types.
 
 For example, if you have a piece of code that works with a Shape class, then you should be able to substitute that class with any of its subclasses, such as Circle or Rectangle, without breaking the code.
+
+## 4. Interface Segregation Principle (ISP)
+
+The interface segregation principle (ISP) comes from the same mind as the single-responsibility principle. Yes, it’s another feather in Uncle Bob’s cap. The principle’s main idea is that:
+
+> Clients should not be forced to depend upon methods that they do not use. Interfaces belong to clients, not to hierarchies.
+
+In this case, clients are classes and subclasses, and interfaces consist of methods and attributes. In other words, if a class doesn’t use particular methods or attributes, then those methods and attributes should be segregated into more specific classes.
