@@ -43,4 +43,7 @@ Code should do what the name and comments suggest. Conventions should be followe
 avoided as much as possible.
 
 Read
-more: [Introduction to Clean Code and Software Design Principles: Improve Object-Oriented Design in Python](https://workat.tech/machine-coding/tutorial/introduction-clean-code-software-design-principles-nwu4qqc63e09).
+more: [Software Design Principles (Basics) | DRY, YAGNI, KISS, etc](https://workat.tech/machine-coding/tutorial/software-design-principles-dry-yagni-eytrxfhz1fla)
+
+Full
+articles: [Introduction to Clean Code and Software Design Principles: Improve Object-Oriented Design in Python](https://workat.tech/machine-coding/tutorial/introduction-clean-code-software-design-principles-nwu4qqc63e09).
