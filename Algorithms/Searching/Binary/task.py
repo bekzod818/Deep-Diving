@@ -1,4 +1,4 @@
-def binarySearch(arr: list, item: int) -> int:
+def binary_search(arr: list, item: int) -> int:
     l_index = 0
     r_index = len(arr) - 1
 
@@ -19,5 +19,5 @@ def binarySearch(arr: list, item: int) -> int:
 
 
 # Binary search works with only sorted elements
-result = binarySearch([1, 3, 4, 6, 7, 8, 10, 12, 23, 45, 56, 78, 99], 23)
+result = binary_search([1, 3, 4, 6, 7, 8, 10, 12, 23, 45, 56, 78, 99], 23)
 print(result)
