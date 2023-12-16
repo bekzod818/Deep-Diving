@@ -2,6 +2,9 @@ def binarySearch(arr: list, item: int) -> int:
     l_index = 0
     r_index = len(arr) - 1
 
+    if item < arr[l_index] or item > arr[r_index]:
+        return -1
+
     while l_index <= r_index:
         middle_index = (l_index + r_index) // 2
 
@@ -16,5 +19,5 @@ def binarySearch(arr: list, item: int) -> int:
 
 
 # Binary search works with only sorted elements
-result = binarySearch([1, 3, 4, 6, 7, 8, 10, 12, 23, 45, 56, 78, 99], 25)
+result = binarySearch([1, 3, 4, 6, 7, 8, 10, 12, 23, 45, 56, 78, 99], 23)
 print(result)
