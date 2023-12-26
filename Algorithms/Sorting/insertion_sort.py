@@ -4,7 +4,6 @@ def insertion_sort(array: list) -> list:
         previous_index = index - 1
         while previous_index >= 0 and array[previous_index] > current_element:
             array[previous_index + 1] = array[previous_index]
-            print(array[previous_index + 1], previous_index)
             previous_index -= 1
         array[previous_index + 1] = current_element
     return array
