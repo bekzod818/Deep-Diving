@@ -43,3 +43,6 @@
 11. If you want to close you need write this command
 
 ```exit```
+
+
+**Show all examples and codes here: https://www.w3schools.com/python/python_mongodb_getstarted.asp**
