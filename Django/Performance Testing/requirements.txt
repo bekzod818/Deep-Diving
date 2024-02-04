@@ -1,0 +1,4 @@
+django==5.0.1
+django-seed==0.3.1
+nplusone==1.6.2
+pytest-django==7.4.1
