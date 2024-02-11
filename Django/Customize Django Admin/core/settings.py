@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "tickets.apps.TicketsConfig",
+    "djangoql",
+    "import_export",
 ]
 
 MIDDLEWARE = [
