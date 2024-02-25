@@ -1,5 +1,12 @@
 import pytest
 
+"""
+1. Simple Test
+Test one feature at a time
+Small test
+A single assertion
+"""
+
 
 def some_calculation(a, b):
     return a + b
@@ -22,7 +29,7 @@ def test_dict():
     assert make_a_dict(2, 3) == {"a": 2, "b": 3, "result": 5}
 
     with pytest.raises(ValueError):
-        make_a_dict(2, 3)
+        make_a_dict(-1, -1)
 
 
 # ✅ Good
