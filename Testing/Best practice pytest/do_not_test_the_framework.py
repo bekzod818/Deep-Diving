@@ -14,6 +14,7 @@ def test_django_authentication():
 from flask import Flask
 
 
+# 🚨 Bad
 def test_flask_error_handling():
     app = Flask(__name__)
 
