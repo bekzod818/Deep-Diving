@@ -1,4 +1,5 @@
 import logging
+import time
 
 logger = logging.getLogger(__name__)
 handler = logging.StreamHandler()
@@ -14,8 +15,20 @@ class LoggingMiddleware:
 
     def __call__(self, request):
         # logic executed before the request is passed to the View (or any other middleware)
+        start_time = time.time()
+
+        request_data = {
+            "method": request.method,
+            "ip_address": request.META.get("REMOTE_ADDR"),
+            "path": request.path,
+        }
+        logger.info(request_data)
 
         response = self.get_response(request)
+        duration = time.time() - start_time
+
+        response_dict = {"status_code": response.status_code, "duration": duration}
+        logger.info(response_dict)
 
         # logic executed after view is called
 
