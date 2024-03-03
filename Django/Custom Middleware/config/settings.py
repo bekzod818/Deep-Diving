@@ -49,6 +49,8 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     # Custom middleware
     "core.middleware.logging.LoggingMiddleware",
+    "core.middleware.ip_blacklist.IPBlacklistMiddleware",
+    "core.middleware.htmx_middleware.HTMXMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -119,3 +121,9 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+BANNED_IPS = [
+    # "127.0.0.1",
+    "192.168.1.1",
+    "172.148.2.1",
+]
