@@ -50,6 +50,7 @@ MIDDLEWARE = [
     # Custom middleware
     "core.middleware.logging.LoggingMiddleware",
     "core.middleware.ip_blacklist.IPBlacklistMiddleware",
+    "core.middleware.htmx_middleware.HTMXMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"
