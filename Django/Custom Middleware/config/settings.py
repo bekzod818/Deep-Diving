@@ -124,4 +124,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 BANNED_IPS = [
     # "127.0.0.1",
+    "192.168.1.1",
+    "172.148.2.1",
 ]
