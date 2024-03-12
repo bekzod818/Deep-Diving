@@ -6,10 +6,20 @@ WORKDIR /app
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-RUN apt-get update && apt-get install -y --no-install-recommends gcc
+# RUN apt-get update && apt-get install -y --no-install-recommends gcc
+
+RUN apt-get update && apt-get install -y \
+    git \
+    gcc \
+    matplotlib \
+    pillow  \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt .
 RUN pip wheel --no-cache-dir --no-deps --wheel-dir /app/wheels -r requirements.txt
+
+COPY sample.py .
 
 # Final stage
 FROM python:3.12.2-slim
