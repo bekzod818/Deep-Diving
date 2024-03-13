@@ -1,6 +1,14 @@
 # Temp stage
 FROM python:3.12.2-slim as builder
 
+RUN addgroup --system app && adduser --system --group app
+# You can take it a step further and remove shell access and ensure there's no home directory as well:
+
+RUN addgroup --gid 1001 --system app && \
+    adduser --no-create-home --shell /bin/false --disabled-password --uid 1001 --system --group app
+
+USER app
+
 WORKDIR /app
 
 ENV PYTHONDONTWRITEBYTECODE 1
