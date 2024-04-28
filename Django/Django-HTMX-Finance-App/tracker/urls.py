@@ -1,6 +1,8 @@
 from django.urls import path
-from .views import index
+from tracker import views
+
 
 urlpatterns = [
-    path("", index, name="index"),
+    path("", views.index, name='index'),
+    path("transactions/", views.transactions_list, name='transactions-list')
 ]
