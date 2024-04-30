@@ -1,3 +1,7 @@
-from django.urls import path  # noqa
+from django.urls import path
 
-urlpatterns = []
+from .views import CVUploadView
+
+urlpatterns = [
+    path("upload-cv/", CVUploadView.as_view(), name="upload-cv"),
+]
