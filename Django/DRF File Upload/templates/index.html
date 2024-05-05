@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Index Page{% endblock title %}
+
+{% block content %}
+<form action="{% url 'upload-cv' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <input type="file" name="file">
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    window.addEventListener("load", (event) => {
+        const form = document.querySelector('form');
+        const submitUrl = form.getAttribute('action');
+        let fileInput = document.querySelector('input[type="file"]');
+        let csrf = document.querySelector('input[name="csrfmiddlewaretoken"]');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData();
+            const headers = {
+                'X-CSRFToken': csrf.value,
+            };
+            formData.append('file', fileInput.files[0]);
+
+            fetch(submitUrl, {
+                method: "POST",
+                body: formData,
+                headers: headers
+            }).then(response => response.json()).then(data => console.log(data))
+        })
+    })
+</script>
+{% endblock content %}

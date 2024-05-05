@@ -3,8 +3,14 @@ from rest_framework.parsers import FormParser, MultiPartParser
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
+from django.shortcuts import render
+
 from .models import User
 from .serializers import CVUploadSerializer
+
+
+def index(request):
+    return render(request, "index.html")
 
 
 class CVUploadView(APIView):
