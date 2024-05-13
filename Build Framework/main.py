@@ -13,6 +13,16 @@ def about(request, response):
     response.text = "Hello from the About page"
 
 
+@app.route("/hello/{name}")
+def greeting(request, response, name):
+    """
+    Simple greeting route
+    /hello/Bekzod -> 'Hello Bekzod'
+    /hello/John -> 'Hello John'
+    """
+    response.text = f"Hello {name}"
+
+
 """
 {
     "/home": home,
