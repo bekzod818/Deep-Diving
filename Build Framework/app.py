@@ -1,5 +1,7 @@
 import inspect
 
+import requests
+import wsgiadapter
 from parse import parse
 from webob import Request, Response
 
@@ -48,3 +50,8 @@ class DolphinApp:
             return handler
 
         return wrapper
+
+    def test_session(self):
+        session = requests.Session()
+        session.mount("http://testserver", wsgiadapter.WSGIAdapter(self))
+        return session
