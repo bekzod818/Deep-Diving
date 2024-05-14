@@ -1,5 +1,7 @@
 import inspect
 
+import requests
+import wsgiadapter
 from parse import parse
 from webob import Request, Response
 
@@ -40,11 +42,18 @@ class DolphinApp:
         response.status_code = 404
         response.text = "Not Found"
 
-    def route(self, path):
+    def add_route(self, path, handler):
         assert path not in self.routes, "Duplicate route found: %s" % path
+        self.routes[path] = handler
 
+    def route(self, path):
         def wrapper(handler):
-            self.routes[path] = handler
+            self.add_route(path, handler)
             return handler
 
         return wrapper
+
+    def test_session(self):
+        session = requests.Session()
+        session.mount("http://testserver", wsgiadapter.WSGIAdapter(self))
+        return session
