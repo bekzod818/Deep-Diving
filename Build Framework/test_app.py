@@ -75,3 +75,15 @@ def test_class_based_method_not_allowed(app, test_client):
 
     assert response.status_code == 405
     assert response.text == "Method Not Allowed"
+
+
+def test_alternative_route_adding(app, test_client):
+    def new_handler(req, resp):
+        resp.text = "Hello World New Handler"
+
+    app.add_route("/new-handler", new_handler)
+
+    assert (
+        test_client.get("http://testserver/new-handler").text
+        == "Hello World New Handler"
+    )

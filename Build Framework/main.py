@@ -32,6 +32,12 @@ class Books:
         response.text = "Endpoint to create a book"
 
 
+def new_handler(request, response):
+    response.text = "Hello from the new handler"
+
+
+app.add_route("/new-handler", new_handler)
+
 """
 {
     "/home": home,
