@@ -1,3 +1,5 @@
+import inspect
+
 from parse import parse
 from webob import Request, Response
 
@@ -15,6 +17,13 @@ class DolphinApp:
         response = Response()
         handler, kwargs = self.find_handler(request)
         if handler is not None:
+            if inspect.isclass(handler):
+                handler = getattr(handler(), request.method.lower(), None)
+                if handler is None:
+                    response.status_code = 405
+                    response.text = "Method Not Allowed"
+                    return response
+
             handler(request, response, **kwargs)
         else:
             self.default_response(response)
@@ -32,6 +41,8 @@ class DolphinApp:
         response.text = "Not Found"
 
     def route(self, path):
+        assert path not in self.routes, "Duplicate route found: %s" % path
+
         def wrapper(handler):
             self.routes[path] = handler
             return handler

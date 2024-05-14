@@ -23,6 +23,15 @@ def greeting(request, response, name):
     response.text = f"Hello {name}"
 
 
+@app.route("/books")
+class Books:
+    def get(self, request, response):
+        response.text = "Hello from the Books page"
+
+    def post(self, request, response):
+        response.text = "Endpoint to create a book"
+
+
 """
 {
     "/home": home,
