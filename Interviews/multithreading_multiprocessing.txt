@@ -1,0 +1,12 @@
+Where should we use Python's multithreading, multiprocessing, and asyncio libraries?
+
+To answer this question, we need some background knowledge. We divide the operations that we want our Python code to do into two categories:
+
+    CPU-bound operations such as parsing, image processing, string manipulation, and algorithms involving heavy calculations.
+    We can use parallelism for these types of operations. Basically, parallel programming is when we create different processes
+    to divide a job among them and they all do the job simultaneously. Each process has its own GIL, Python interpreter,
+    memory space, and state information. In Python, we use the multiprocessing library to achieve parallelism.
+
+    IO-bound operations such as sending HTTP requests, querying data from databases, sending emails, and opening a file.
+    We use concurrency for these operations. In Python, we can handle these operations using multithreading and
+    asyncio libraries. Note that parallelism requires more resources than concurrency.

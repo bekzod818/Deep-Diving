@@ -1,0 +1,11 @@
+Interviewer: “Let’s dive right in. Can you explain the difference between list and tuple in Python?”
+
+Candidate: Certainly! Lists and tuples are both sequence data types in Python, but they have key differences:
+    Lists:
+        Mutable: Their elements can be changed, added, or removed after creation.
+        Slower: Due to their mutable nature, they are generally slower to access and modify compared to tuples.
+        Uses: Used for dynamic collections where elements need to be modified frequently, such as storing a list of groceries or user-input data.
+    Tuples:
+        Immutable: Their elements cannot be changed once created.
+        Faster: Because they are immutable, tuples are typically faster to access and iterate over compared to lists.
+        Uses: Used for collections where elements should remain constant, such as storing coordinates, database records, or defining functions with multiple return values.
