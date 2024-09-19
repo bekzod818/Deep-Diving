@@ -1,0 +1,58 @@
+What is LEGB in Python?
+
+Candidate: LEGB is a mnemonic rule in Python that determines the order in which the interpreter searches for names when resolving references. It stands for:
+    Local: The innermost scope, typically within a function or class definition.
+    Enclosing: The scope of the enclosing function or class.
+    Global: The scope of the module or script.
+    Built-in: The scope of built-in Python names.
+How LEGB Works:
+    Local Scope: The interpreter first checks the current function or class definition for the name. If found, it's used.
+    Enclosing Scope: If not found in the local scope, it searches the enclosing function or class definition.
+    Global Scope: If still not found, it looks for the name at the module or script level.
+    Built-in Scope: As a last resort, it checks the built-in namespace for the name.
+Example
+    x = 10  # Global scope
+
+    def outer():
+        y = 20  # Enclosing scope
+
+        def inner():
+            z = 30  # Local scope
+            print(x, y, z)  # Accesses names from all scopes
+
+        inner()
+
+    outer()
+
+In this example, inner can access x from the global scope, y from the enclosing scope, and z from its local scope.
+
+Key Points:
+    Shadowing: A name defined in a narrower scope can shadow a name in a wider scope.
+    global and nonlocal keywords: These keywords can be used to modify the scope of variables within functions.
+    Understanding LEGB is essential for writing clean and maintainable Python code.
+
+
+What are the usages of nonlocal and global keywords in Python?
+    This interview question has a direct relationship with the previous one.
+    The code sample below illustrates the usage of these two keywords:
+
+variable = "hello 1" # This variable is declared in the Global scope
+
+def fun():
+    global variable # Without this we would not be able to change the variable value
+    variable = "hello 2"
+
+fun()
+print(variable) # "hello 2"
+………………………………………………………………
+def outer():
+    variable = "hello 1" # This variable is declared in a Local scope
+
+    def inner():
+        nonlocal variable # Without this keyword we could not change the variable value
+        variable = "hello 2"
+
+    inner()
+    print(variable)
+
+outer() # "hello 2"

@@ -1,0 +1,18 @@
+How does Python handle memory management?
+
+Before answering senior Python interview questions like this one, you must be aware that we are talking about
+the CPython implementation. Other Python implementations may have different rules and requirements for memory management.
+
+Assume you have a Python script and you want to execute it. When you execute this file, the Python interpreter occupies
+some “area” of the RAM. This “area” itself is divided into two categories: the stack and the private heap.
+
+Now assume that in this script we have declared a string object a = “hello”. When we execute this script, the CPython
+memory management system creates an object of type string on the private heap. This object contains three fields:
+
+    Type: This is a string (note that Python is a dynamically typed programming language, so it will understand your object type to store).
+    Value: This is “hello”.
+    Reference count: It shows the number of times that a has been referenced. For now, it is 1.
+
+Now on the stack, the reference to A (that is stored on the private heap) is stored. There exists a tool called a
+garbage collector. The garbage collector’s job is to delete the objects (on the private heap) that are no longer referenced,
+meaning, it deletes the objects whose reference count reached zero. This way the garbage collector frees up some memory space for the Python interpreter.
