@@ -1,0 +1,21 @@
+How do you write scalable code in Python?
+
+This is one of the most impactful and advanced senior Python interview questions. Scalability means creating services and microservices that can handle millions of users (large loads) without going down. This is a challenge that must be handled properly and writing scalable code is one way to make our service scalable.
+
+Please be aware that we have to take into account many other components of creating a scalable project, such as systems design, DBMS, and infrastructure.
+
+Below you can find some concepts of writing scalable code for Python Core to include in your answer to this interview question.
+
+Use efficient data structures. For example, the time complexity of in operator is different depending on what iterable it has been used on.
+
+On list/tuple 🡪 O(n) time complexity.
+On dictionary/set 🡪 O(1) is the average case and O(n) is the worst case.
+In the examples above, n is the length of the iterable.
+
+Use parallelism. Dividing and running a CPU-bound operation using different processes can be a solution to boost the speed.
+
+Design a distributed system. In a distributed system there are different machines that communicate with each other to do a job. Using libraries like Apache Spark or Ray can be a good approach for scalability.
+
+Use caching. Assume there is an image that requires heavy processing and this image must be sent to many users. To address such requirements, we can process this image only once and cache/store the processed version in a variable. This way whenever we want this processed image, we can just make use of that variable and avoid processing the image again.
+
+LINK: https://aw.club/global/en/blog/senior-python-developer-interview-questions
